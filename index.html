@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://kit.fontawesome.com/af21155659.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Início - GamesFlix</title>
+</head>
+<body class="bg-black">
+
+	<header class="flex bg-black sticky top-0 left-0 p-3 z-50">
+		<h1 id="title" class="font-sans font-bold text-4xl text-red-500">GameFlix</h1>
+		<div id="navbar" class="flex justify-between items-center w-full px-7">
+			<nav>
+				<ul class="flex text-white">
+					<li class="mx-4"><a href="index.html" class="text-gray-300 font-semibold hover:text-white">Inicio</a></li>
+					<li class="mx-4"><a href="#" class="text-gray-300 font-semibold hover:text-white">Jogos</a></li>
+					<li class="mx-4"><a href="#" class="text-gray-300 font-semibold hover:text-white">Lançamentos</a></li>	
+					<li class="mx-4"><a href="#" class="text-gray-300 font-semibold hover:text-white">Categorias</a></li>
+					<li class="mx-4"><a href="#" class="text-gray-300 font-semibold hover:text-white">Minha lista</a></li>
+				</ul>
+			</nav>
+
+			<nav>
+				<ul class="flex text-white items-center">
+					<li class="mx-3">
+						<form action="" method="GET" onclick="event.preventDefault()">
+							<div id="search-container" class="flex w-7 py-[3px] pl-2 border-[1px] border-transparent bg-transparent transition-all">
+								<button id="search-btn" class="mr-3"><i class="fa-solid fa-magnifying-glass fa-lg" title="Pesquisar"></i></button>
+								<input id="search-input" class="bg-transparent w-full outline-none" type="search" name="search" placeholder="Titulos, franquias e gêneros" autocomplete="off">
+							</div>
+						</form>
+					</li>
+					<!-- <li class="mx-3"><a href="#" class="text-gray-300 font-semibold hover:text-white">INFANTIL</a></li> -->
+					<li class="mx-3"><button title="Notificações"><i class="fa-solid fa-bell fa-lg"></i></button></li>
+					<li class="mx-3">
+						<div id="profile" class="flex items-center">
+							<div class="bg-white w-8 h-8 mr-3"></div>
+							<i class="fa-solid fa-caret-down"></i>
+						</li>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container mx-auto pt-4">
+		<div>
+			<div class="w-full h-[34rem] bg-gray-400 rounded">
+				<div class="h-full pl-16 flex flex-col justify-center">
+					<h1 class="text-3xl uppercase font-bold">Game name</h1>
+					<h2 class="text-lg font-semibold mb-2">Lançamento 32 de fevereiro</h2>
+					<p class="w-1/2 mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+					<div class="flex">
+						<a class="px-8 py-2 bg-neutral-100 m-2 ml-0 font-semibold rounded hover:bg-neutral-200" href="#"><i class="mr-5 fa-solid fa-play fa-lg"></i>Jogar</a>
+						<a class="px-8 py-2 bg-neutral-100/50 m-2 font-semibold rounded hover:bg-neutral-100/30" href="#"><i class="mr-5 fa-solid fa-info fa-lg"></i>Mais informações</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="relative bottom-20">
+			<div>
+				<h1 id="popular-text" class="text-white text-xl font-semibold ml-6">Populares na GameFlix</h1>
+				<div id="popular-carrousel" class="games-carrousel px-5 pt-2 pb-3 mb-6 mt-0 overflow-x-scroll overflow-y-hidden">
+					<div class="carrousel-content flex justify-left items-center gap-3">
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="popular">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="popular">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="popular">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="popular">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="popular">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="popular">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h1 class="text-white text-xl font-semibold ml-6">Jogar novamente</h1>
+				<div id="play-again-carrousel" class="games-carrousel px-5 pt-2 pb-3 mb-6 mt-0 overflow-x-scroll overflow-y-hidden">
+					<div class="carrousel-content flex justify-left items-center gap-3">
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="play-again">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="play-again">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="play-again">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="play-again">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="play-again">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="play-again">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h1 class="text-white text-xl  font-semibold ml-6 my-2">Ação</h1>
+				<div id="action-carrousel" class="games-carrousel px-5 pt-2 pb-3 mb-6 mt-0 overflow-x-scroll overflow-y-hidden">
+					<div class="carrousel-content flex justify-left items-center gap-3">
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="action">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded overflow-hidden">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="action">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded overflow-hidden">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="action">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded overflow-hidden">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="action">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="action">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="action">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h1 class="text-white text-xl font-semibold ml-6">Aventura</h1>
+				<div id="adventure-carrousel" class="games-carrousel px-5 pt-2 pb-3 mb-6 mt-0 overflow-x-scroll overflow-y-hidden">
+					<div class="carrousel-content flex justify-left items-center gap-3">
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="adventure">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="adventure">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="adventure">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="adventure">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="adventure">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+						<div class="games w-72 min-w-[288px] relative transition-all shadow-xl shadow-black cursor-pointer hover:scale-110" data-games="adventure">
+							<span class="gameflix-icon absolute top-2 left-3 font-sans font-bold text-2xl text-red-500">G</span>
+							<div class="game-background w-full h-36 bg-gray-500 overflow-hidden rounded">
+								<!-- <img src="..."> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="p-5">
+		<div class="container mx-auto flex justify-center items-center">
+			<p class="text-white">&copy Thales Mariano 2023</p>
+		</div>
+	</footer>
+
+	<script src="https://unpkg.com/scrollbooster@2/dist/scrollbooster.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>

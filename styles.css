@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 14px;
+	background-color: #151515;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #373737;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #454545;
+}
+
+.games-carrousel::-webkit-scrollbar {
+	height: 8px;
+}
+
+#popular-text {
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, .7);
+}
+
+.games:hover {
+	z-index: 999;
+}
+
+.gameflix-icon {
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+}
