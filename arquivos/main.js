@@ -74,25 +74,25 @@ function scrollTrigger({selector, offeset = 0, execute, viewTrigger}){
 	}
 }
 
-// setGames(popular_games, "", 6)
+setGames(popular_games, "", 6)
 
-// scrollTrigger({
-// 	selector: "#play-again-carrousel",
-// 	offeset: 700,
-// 	execute: () => setGames(play_again_games, "indie", 6),
-// 	// viewTrigger: true
-// })
+scrollTrigger({
+	selector: "#play-again-carrousel",
+	offeset: 700,
+	execute: () => setGames(play_again_games, "indie", 6),
+	// viewTrigger: true
+})
 
-// scrollTrigger({
-// 	selector: "#action-carrousel",
-// 	offeset: 600,
-// 	execute: () => setGames(action_games, "action", 6),
-// 	// viewTrigger: true
-// })
+scrollTrigger({
+	selector: "#action-carrousel",
+	offeset: 600,
+	execute: () => setGames(action_games, "action", 6),
+	// viewTrigger: true
+})
 
-// scrollTrigger({
-// 	selector: "#adventure-carrousel",
-// 	offeset: 500,
-// 	execute: () => setGames(adventure_games, "adventure", 6),
-// 	// viewTrigger: true
-// })
+scrollTrigger({
+	selector: "#adventure-carrousel",
+	offeset: 500,
+	execute: () => setGames(adventure_games, "adventure", 6),
+	// viewTrigger: true
+})
