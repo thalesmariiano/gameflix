@@ -99,10 +99,6 @@
 	text-shadow: 0px 0px 5px rgba(0, 0, 0, .7);
 }
 
-.games:hover {
-	z-index: 999;
-}
-
 .gameflix-icon {
 	text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
 }
