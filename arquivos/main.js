@@ -53,7 +53,7 @@ games.forEach(game => {
 			modal_game_name.innerHTML = d_div.name
 			modal_game_platforms.innerHTML = ""
 			d_div.platforms.forEach(p => {
-				modal_game_platforms.innerHTML += `<p class="mx-1">${p.platform.name}</p>`
+				modal_game_platforms.innerHTML += `<p class="text-white mx-1">${p.platform.name}</p>`
 			})
 			modal_game_background.src = d_div.short_screenshots[1].image
 			const date = new Date(d_div.released)
@@ -136,12 +136,12 @@ function scrollTrigger({selector, offeset = 0, execute, viewTrigger}){
 
 setGames(popular_games, "", 6)
 
-// scrollTrigger({
-// 	selector: "#play-again-carrousel",
-// 	offeset: 700,
-// 	execute: () => setGames(play_again_games, "indie", 6),
-// 	// viewTrigger: true
-// })
+scrollTrigger({
+	selector: "#play-again-carrousel",
+	offeset: 700,
+	execute: () => setGames(play_again_games, "indie", 6),
+	// viewTrigger: true
+})
 
 // scrollTrigger({
 // 	selector: "#action-carrousel",
