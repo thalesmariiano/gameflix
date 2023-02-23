@@ -24,6 +24,11 @@
 	background-color: #454545;
 }
 
+@font-face {
+	font-family: condensed;
+	src: url(./fonts/bahmschrift_condensed.TTF);
+}
+
 #notification::after {
 	content: " ";
 	width: 40px;
@@ -102,3 +107,21 @@
 .gameflix-icon {
 	text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
 }
+
+#header-content {
+	background: rgb(0,0,0);
+	background: linear-gradient(0deg, rgba(0,0,0,0.908000700280112) 0%, rgba(25,25,25,0) 100%);
+}
+
+.text-format {
+	font-family: "condensed", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#game-public-rating::first-letter {
+	text-transform: uppercase;
+}
+
+
+

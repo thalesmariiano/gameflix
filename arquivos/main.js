@@ -10,6 +10,7 @@ const close_modal = document.querySelector("#close-modal")
 const modal_game_platforms = document.querySelector("#game-platforms")
 const modal_game_name = document.querySelector("#game-name")
 const modal_game_background = document.querySelector("#modal-game-background")
+const modal_game_public_rating = document.querySelector("#game-public-rating")
 const modal_game_release_date = document.querySelector("#game-release-date")
 const modal_game_rating = document.querySelector("#game-rating")
 const modal_game_description = document.querySelector("#game-description")
@@ -70,6 +71,20 @@ games.forEach(game => {
 					break
 				case 4:
 					modal_game_rating.style.background = "rgb(153 27 27)"
+					break
+			}
+			const maxRating = d_div.ratings.reduce((prev, current) => prev.count > current.count ? prev : current)
+			modal_game_public_rating.innerHTML = maxRating ? maxRating.title : "Sem avaliações"
+			modal_game_public_rating.style.color = "white"
+			switch(maxRating.id){
+				case 1:
+				case 3:
+					modal_game_public_rating.style.color = "#ba6829"
+					break
+				case 2:
+				case 4:
+				case 5:
+					modal_game_public_rating.style.color = "#0b9616"
 					break
 			}
 		}
@@ -143,16 +158,16 @@ scrollTrigger({
 	// viewTrigger: true
 })
 
-// scrollTrigger({
-// 	selector: "#action-carrousel",
-// 	offeset: 600,
-// 	execute: () => setGames(action_games, "action", 6),
-// 	// viewTrigger: true
-// })
+scrollTrigger({
+	selector: "#action-carrousel",
+	offeset: 600,
+	execute: () => setGames(action_games, "action", 6),
+	// viewTrigger: true
+})
 
-// scrollTrigger({
-// 	selector: "#adventure-carrousel",
-// 	offeset: 500,
-// 	execute: () => setGames(adventure_games, "adventure", 6),
-// 	// viewTrigger: true
-// })
+scrollTrigger({
+	selector: "#adventure-carrousel",
+	offeset: 500,
+	execute: () => setGames(adventure_games, "adventure", 6),
+	// viewTrigger: true
+})
