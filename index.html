@@ -73,7 +73,7 @@
 				<div class="h-full pl-16 flex flex-col justify-center">
 					<h1 class="text-3xl uppercase font-bold">Game name</h1>
 					<h2 class="text-lg font-semibold mb-2">Lançamento 32 de fevereiro</h2>
-					<p class="w-1/2 mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					<p id="description" class="w-1/2 mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua.</p>
 					<div class="flex">
 						<a class="px-8 py-2 bg-neutral-100 m-2 ml-0 font-semibold rounded hover:bg-neutral-200" href="#"><i class="mr-5 fa-solid fa-play fa-lg"></i>Jogar</a>
@@ -262,42 +262,48 @@
 	</div>
 
 	<div id="modal-container" class="flex justify-center items-center fixed top-0 left-0 bg-neutral-900/80 w-full h-full z-50 hidden">
-		<div id="modal" class="flex flex-col max-w-[683px] h-[95%] bg-neutral-600">
+		<div id="modal" class="flex flex-col max-w-[683px] h-[95%] bg-neutral-900">
 			<div id="modal-header" class="relative w-full h-64 bg-neutral-400">
 				<div id="image-container" class="w-full h-full overflow-hidden">
 					<img id="modal-game-background" src="...">
 				</div>
 				<div id="header-content" class="absolute top-0 left-0 w-full h-full flex flex-col justify-between p-3">
 					<div id="close-button-container" class="text-right">
-						<button id="close-modal">X</button>
+						<button id="close-modal"><i class="fa-solid fa-xmark fa-2xl text-red-700"></i></button>
 					</div>
 					<div class="flex flex-col justify-center items-start">
 						<div id="game-platforms" class="flex">
 
 						</div>
-						<h1 id="game-name" class="text-3xl font-bold text-white">Game Name</h1>
+						<div class="w-full">
+							<h1 id="game-name" class="text-format text-red-700 text-3xl font-bold">Game Name</h1>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div id="modal-content" class="flex flex-col justify-between h-full p-3">
-				<div>
+				<div class="px-3">
 					<div id="avaliation-info" class="flex">
-						<p class="text-[#267326] font-semibold mx-1">Recommended</p> |
-						<p id="game-release-date" class="mx-1">2023</p> |
+						<p id="game-public-rating" class="mx-1 text-white font-semibold">Recomended</p> <span class="text-white">|</span>
+						<p id="game-release-date" class="mx-1 text-white">2023</p> <span class="text-white">|</span>
 						<p id="game-rating" class="text-white px-1 rounded mx-1">Rating</p>
 					</div>
 					<div id="game-description" class="mt-3">
-						<p>Sinopse</p>
-						<p id="game-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						<p id="descrep-title" class="text-format text-xl text-red-700">Descrição do jogo</p>
+						<p id="game-description" class="text-format text-sm text-neutral-300 w-11/12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 						consequat.</p>
 					</div>
 				</div>
-				<div id="more-info">
-					<p class="py-1 border-y-[1px] border-white text-gray-900"><span class="text-gray-100">Genres:</span> Adventure - RPG - Action</p>
-					<p class="py-1 text-gray-900"><span class="text-gray-100">Developer:</span> Santa Monica Studio</p>
-					<p class="py-1 border-y-[1px] border-white text-gray-900"><span class="text-gray-100">Last Update:</span> 00-00-000</p>
+				<div id="more-info" class="flex justify-between items-center px-3 pb-5">
+					<div>
+						<h2 class="text-format text-red-700">Gêneros</h2>
+						<p id="game-genres" class="text-format text-white">Ação, Aventura, RPG</p>
+					</div>
+					<div>
+						<a id="modal-play-btn" class="text-format text-red-700 text-2xl" href="#"><i class="fa-solid fa-play fa-lg"></i> Play</a>
+					</div>
 				</div>
 			</div>
 		</div>

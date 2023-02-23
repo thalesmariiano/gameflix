@@ -14,6 +14,7 @@ const modal_game_public_rating = document.querySelector("#game-public-rating")
 const modal_game_release_date = document.querySelector("#game-release-date")
 const modal_game_rating = document.querySelector("#game-rating")
 const modal_game_description = document.querySelector("#game-description")
+const modal_game_genres = document.querySelector("#game-genres")
 
 const games_carrousel  = document.querySelectorAll(".games-carrousel")
 const games  = document.querySelectorAll(".games")
@@ -54,7 +55,31 @@ games.forEach(game => {
 			modal_game_name.innerHTML = d_div.name
 			modal_game_platforms.innerHTML = ""
 			d_div.platforms.forEach(p => {
-				modal_game_platforms.innerHTML += `<p class="text-white mx-1">${p.platform.name}</p>`
+				switch(p.platform.id){
+					case 1:
+					case 14:
+						modal_game_platforms.innerHTML += `<i class="fa-brands fa-xbox text-white mx-1"></i>`
+						break
+					case 3:
+					case 5:
+						modal_game_platforms.innerHTML += `<i class="fa-brands fa-apple text-white mx-1"></i>`
+						break
+					case 4:
+						modal_game_platforms.innerHTML += `<p class="text-white mx-1">PC</p>`
+						break
+					case 6:
+						modal_game_platforms.innerHTML += `<i class="fa-brands fa-linux text-white mx-1"></i>`
+						break
+					case 16:
+					case 18:
+					case 19:
+						modal_game_platforms.innerHTML += `<i class="fa-brands fa-playstation text-white mx-1"></i>`
+						break
+					case 21:
+						modal_game_platforms.innerHTML += `<i class="fa-brands fa-android text-white mx-1"></i>`
+						break
+
+				}
 			})
 			modal_game_background.src = d_div.short_screenshots[1].image
 			const date = new Date(d_div.released)
@@ -87,6 +112,8 @@ games.forEach(game => {
 					modal_game_public_rating.style.color = "#0b9616"
 					break
 			}
+			modal_game_genres.innerHTML = ""
+			d_div.genres.forEach(genre => modal_game_genres.innerHTML += `${genre.name}, `)
 		}
 	})
 })
@@ -151,23 +178,23 @@ function scrollTrigger({selector, offeset = 0, execute, viewTrigger}){
 
 setGames(popular_games, "", 6)
 
-scrollTrigger({
-	selector: "#play-again-carrousel",
-	offeset: 700,
-	execute: () => setGames(play_again_games, "indie", 6),
-	// viewTrigger: true
-})
+// scrollTrigger({
+// 	selector: "#play-again-carrousel",
+// 	offeset: 700,
+// 	execute: () => setGames(play_again_games, "indie", 6),
+// 	// viewTrigger: true
+// })
 
-scrollTrigger({
-	selector: "#action-carrousel",
-	offeset: 600,
-	execute: () => setGames(action_games, "action", 6),
-	// viewTrigger: true
-})
+// scrollTrigger({
+// 	selector: "#action-carrousel",
+// 	offeset: 600,
+// 	execute: () => setGames(action_games, "action", 6),
+// 	// viewTrigger: true
+// })
 
-scrollTrigger({
-	selector: "#adventure-carrousel",
-	offeset: 500,
-	execute: () => setGames(adventure_games, "adventure", 6),
-	// viewTrigger: true
-})
+// scrollTrigger({
+// 	selector: "#adventure-carrousel",
+// 	offeset: 500,
+// 	execute: () => setGames(adventure_games, "adventure", 6),
+// 	// viewTrigger: true
+// })
