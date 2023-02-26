@@ -26,7 +26,7 @@
 
 @font-face {
 	font-family: condensed;
-	src: url(./fonts/bahnschrift_condensed.TTF);
+	src: url(../fonts/bahnschrift_condensed.TTF);
 }
 
 #notification::after {
