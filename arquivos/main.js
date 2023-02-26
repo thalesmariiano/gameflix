@@ -4,20 +4,20 @@ const url = `https://api.rawg.io/api/games?key=${KEY}`
 
 const body = document.querySelector("body")
 
-const modal_container = document.querySelector("#modal-container")
-const modal = document.querySelector("#modal")
-const close_modal = document.querySelector("#close-modal")
-const modal_game_platforms = document.querySelector("#game-platforms")
-const modal_game_name = document.querySelector("#game-name")
-const modal_game_background = document.querySelector("#modal-game-background")
+const modal_container          = document.querySelector("#modal-container")
+const modal                    = document.querySelector("#modal")
+const close_modal              = document.querySelector("#close-modal")
+const modal_game_platforms     = document.querySelector("#game-platforms")
+const modal_game_name          = document.querySelector("#game-name")
+const modal_game_background    = document.querySelector("#modal-game-background")
 const modal_game_public_rating = document.querySelector("#game-public-rating")
-const modal_game_release_date = document.querySelector("#game-release-date")
-const modal_game_rating = document.querySelector("#game-rating")
-const modal_game_description = document.querySelector("#game-description")
-const modal_game_genres = document.querySelector("#game-genres")
+const modal_game_release_date  = document.querySelector("#game-release-date")
+const modal_game_rating        = document.querySelector("#game-rating")
+const modal_game_description   = document.querySelector("#game-description")
+const modal_game_genres        = document.querySelector("#game-genres")
 
 const games_carrousel  = document.querySelectorAll(".games-carrousel")
-const games = document.querySelectorAll(".games")
+const games            = document.querySelectorAll(".games")
 
 const popular_games    = document.querySelectorAll('[data-games="popular"]')
 const play_again_games = document.querySelectorAll('[data-games="play-again"]')
@@ -39,7 +39,6 @@ games_carrousel.forEach(carrousel => {
 close_modal.addEventListener("click", () => {
 	modal_container.classList.add("hidden")
 	modal_container.classList.remove("flex")
-	body.classList.add("overflow-auto")
 	body.classList.remove("overflow-hidden")
 
 	modal_game_platforms.innerHTML = ""
@@ -75,12 +74,20 @@ function setModalInfo(e){
 	modal_container.classList.add("flex")
 	modal_container.classList.remove("hidden")
 	body.classList.add("overflow-hidden")
-	body.classList.remove("overflow-auto")
 
-	const { name, platforms, esrb_rating, ratings, genres, short_screenshots, released } = games_array.find(game => game.name == e.target.offsetParent.dataset.name)
+	const {
+		name,
+		platforms,
+		esrb_rating,
+		ratings,
+		genres, 
+		short_screenshots,
+		released
+	} = games_array.find(game => game.name == e.target.offsetParent.dataset.name)
+
 	modal_game_name.innerHTML = name
-	platforms.forEach(p => {
-		const { platform } = p
+	
+	platforms.forEach(({ platform }) => {
 		switch(platform.id){
 			case 1:
 			case 14:
@@ -107,30 +114,33 @@ function setModalInfo(e){
 		}
 	})
 
-	modal_game_background.src = short_screenshots[2].image
+	const randomIndex = Math.floor(Math.random() * short_screenshots.length - 0)
+	modal_game_background.src = short_screenshots[randomIndex].image
 
 	const gameReleaseDate = new Date(released).getFullYear()
 	modal_game_release_date.innerHTML = gameReleaseDate
 
 	modal_game_rating.innerHTML = esrb_rating ? esrb_rating.name : "Não classificado"
 	modal_game_rating.style.background = "#a18257"
-	switch(esrb_rating.id){
-		case 1:
-		case 2:
-			modal_game_rating.style.background = "rgb(22 101 52)"
-			break
-		case 3:
-			modal_game_rating.style.background = "rgb(133 77 14)"
-			break
-		case 4:
-			modal_game_rating.style.background = "rgb(153 27 27)"
-			break
+	if(esrb_rating){
+		switch(esrb_rating.id){
+			case 1:
+			case 2:
+				modal_game_rating.style.background = "rgb(22 101 52)"
+				break
+			case 3:
+				modal_game_rating.style.background = "rgb(133 77 14)"
+				break
+			case 4:
+				modal_game_rating.style.background = "rgb(153 27 27)"
+				break
+		}
 	}
 
-	const maxRating = ratings.reduce((prev, current) => prev.count > current.count ? prev : current)
-	modal_game_public_rating.innerHTML = maxRating ? maxRating.title : "Sem avaliações"
+	const higherRating = ratings.reduce((acc, rating) => acc.count > rating.count ? acc : rating, {})
+	modal_game_public_rating.innerHTML = higherRating ? higherRating.title : "Sem avaliações"
 	modal_game_public_rating.style.color = "white"
-	switch(maxRating.id){
+	switch(higherRating.id){
 		case 1:
 		case 3:
 			modal_game_public_rating.style.color = "#ba6829"
@@ -141,7 +151,9 @@ function setModalInfo(e){
 			modal_game_public_rating.style.color = "#0b9616"
 			break
 	}
-	genres.forEach(genre => modal_game_genres.innerHTML += `${genre.name}, `)
+
+	const genre = genres.map(({ name }) => ` ${name}`)
+	modal_game_genres.innerHTML = genre
 }
 
 search_btn.addEventListener("click", () => {
@@ -154,35 +166,6 @@ search_input.addEventListener("focusout", () => {
 	search_container.classList.add("border-transparent", "w-7", "bg-transparent")
 	search_container.classList.remove("border-white", "w-72", "bg-neutral-700")
 })
-
-
-function scrollTrigger({selector, offeset = 0, execute, viewTrigger}){
-	const position = document.querySelector(selector).getBoundingClientRect()
-	const triggerTop = position.top - offeset
-	const triggerBottom = position.bottom
-	var stopTrigger = false
-
-	window.addEventListener("scroll", () => {
-		if(window.scrollY > triggerTop && window.scrollY < triggerBottom){
-			if(!stopTrigger){
-				execute()
-			}
-			stopTrigger = true
-		}
-	})
-
-	if(viewTrigger){
-		const trigger = document.createElement("span")
-		trigger.style.width = "50px"
-		trigger.style.height = "5px"
-		trigger.style.background = "red"
-		trigger.style.position = "absolute"
-		trigger.style.top = `${triggerTop}px`
-		trigger.style.right = "0px"
-		trigger.style.color = "red"
-		document.querySelector("body").appendChild(trigger)
-	}
-}
 
 setGames(popular_games, "", 6)
 
