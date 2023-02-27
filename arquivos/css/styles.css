@@ -104,6 +104,14 @@
 	text-shadow: 0px 0px 5px rgba(0, 0, 0, .7);
 }
 
+.games {
+	border: 1px solid transparent;
+}
+
+.games:hover {
+	border: 1px solid white;
+}
+
 .gameflix-icon {
 	text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
 }
