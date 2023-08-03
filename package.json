@@ -1,0 +1,15 @@
+{
+  "name": "gameflix",
+  "version": "1.0.0",
+  "description": "Uma biblioteca de jogos usando a RAWG API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thales Mariano",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "tailwindcss": "^3.3.3"
+  }
+}
