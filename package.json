@@ -4,7 +4,7 @@
   "description": "Uma biblioteca de jogos usando a RAWG API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "npx tailwindcss -i ./input.css -o ./arquivos/css/styles.css --watch"
   },
   "author": "Thales Mariano",
   "license": "ISC",
