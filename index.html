@@ -13,10 +13,10 @@
 </head>
 <body class="bg-black">
 
-	<header class="bg-black sticky top-0 left-0 py-3 z-50">
-		<div class="container mx-auto flex">
-			<h1 id="title" class="font-sans font-bold text-4xl text-red-500">GameFlix</h1>
-			<div id="navbar" class="flex justify-between items-center w-full pl-7">
+	<header class="bg-black sticky top-0 left-0 py-4 z-50 rounded-b">
+		<div class="w-full px-5 flex justify-between items-center">
+			<div id="navbar" class="flex items-center gap-x-6">
+				<h1 id="title" class="font-sans font-bold text-4xl text-red-500">GameFlix</h1>
 				<nav>
 					<ul class="flex text-white">
 						<li class="mx-4"><a href="index.html" class="text-gray-300 font-semibold hover:text-white">Inicio</a></li>
@@ -26,8 +26,9 @@
 						<!-- <li class="mx-4"><a href="#" class="text-gray-300 font-semibold hover:text-white">Minha lista</a></li> -->
 					</ul>
 				</nav>
+			</div>
 
-				<nav>
+			<nav>
 					<ul class="flex text-white items-center">
 						<li class="mx-3">
 							<form action="" method="GET" onclick="event.preventDefault()">
@@ -37,7 +38,6 @@
 								</div>
 							</form>
 						</li>
-						<!-- <li class="mx-3"><a href="#" class="text-gray-300 font-semibold hover:text-white">INFANTIL</a></li> -->
 						<li class="mx-3 relative">
 							<div id="notification" class="relative cursor-pointer"><i class="fa-solid fa-bell fa-lg"></i>
 								<div id="notification-info" class="absolute top-10 -right-2 w-96 h-28 bg-neutral-900/75 hover:bg-neutral-900 transition-all border-t-2 border-white shadow-sm shadow-white hidden">
@@ -47,7 +47,7 @@
 								</div>
 							</div>
 						</li>
-						<!-- <li class="mx-3 relative">
+						<li class="mx-3 relative">
 							<div id="profile" class="flex items-center cursor-pointer">
 								<div class="bg-white w-8 h-8 mr-3"></div>
 								<i id="caret-down" class="fa-solid fa-caret-down transition-all"></i>
@@ -63,14 +63,13 @@
 									</div>
 								</div>
 							</div>
-						</li> -->
+						</li>
 					</ul>
-				</nav>
-			</div>
+			</nav>
 		</div>
 	</header>
 
-	<div class="container mx-auto pt-4">
+	<div class="container mx-auto">
 		<div>
 			<div class="w-full h-[34rem] bg-gray-400 rounded">
 				<div class="h-full pl-16 flex flex-col justify-center">
