@@ -48,7 +48,12 @@ close_modal.addEventListener("click", () => {
 
 const games_array = []
 
-const getGames = async (genre, count) => {
+const getRDR2 = () => {
+	const redead = fetch(`${url}&search=red-dead-redemption-2`).then(response => response.json())
+	.then(data => console.log(data))
+}
+
+const getGames = async (search, genre, count) => {
 	const genres = genre ? `&genres=${genre}&` : "&"
 	const gamesFetched = await fetch(`${url}${genres}page_size=${count}&page=3`).then(response => response.json())
 						.then(data => data.results)
