@@ -1,34 +1,5 @@
 @charset "UTF-8";
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-::-webkit-scrollbar {
-	width: 14px;
-	background-color: #151515;
-}
-
-::-webkit-scrollbar-track {
-	box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: #373737;
-	border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background-color: #454545;
-}
-
-@font-face {
-	font-family: condensed;
-	src: url(../fonts/bahnschrift_condensed.TTF);
-}
-
 #notification::after {
 	content: " ";
 	width: 40px;
@@ -104,13 +75,13 @@
 	text-shadow: 0px 0px 5px rgba(0, 0, 0, .7);
 }
 
-.games {
+/*.games {
 	border: 1px solid transparent;
 }
 
 .games:hover {
 	border: 1px solid white;
-}
+}*/
 
 .gameflix-icon {
 	text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
@@ -121,11 +92,11 @@
 	background: linear-gradient(0deg, rgba(0,0,0,0.908000700280112) 0%, rgba(25,25,25,0) 100%);
 }
 
-.text-format {
+/*.text-format {
 	font-family: "condensed", sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
-}
+}*/
 
 #game-public-rating::first-letter {
 	text-transform: uppercase;
