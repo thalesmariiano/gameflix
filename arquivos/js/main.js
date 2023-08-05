@@ -48,6 +48,24 @@ close_modal.addEventListener("click", () => {
 
 const games_array = []
 
+function fetchGames(){
+	fetch(`${url}&page_size=6`).then(response => response.json())
+		.then(data => {
+			setGames(data.results)
+		})
+}
+fetchGames()
+
+function setGames(games){
+	const element = document.querySelectorAll(".games[data-games=popular]")
+
+	games.forEach((game, index) => {
+		const banner = element[index].children[1]
+		element[index].dataset.gameId = game.id
+		banner.innerHTML = `<img src="${game.background_image}" alt="${game.name}">`
+	})
+}
+
 // const getRDR2 = () => {
 // 	const redead = fetch(`${url}&search=red-dead-redemption-2`).then(response => response.json())
 // 	.then(data => console.log(data))
