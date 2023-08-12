@@ -1,4 +1,41 @@
 
+function showUI(id, animation){
+	const ui = document.getElementById(id)
+
+	if(!animation.split("__").find(e => e == "animate")){
+		if(animation == "show") ui.classList.remove("hidden")			
+		else ui.classList.add(animation)
+		return
+	}
+
+	ui.classList.remove("hidden")
+	ui.classList.add("animate__animated", animation)
+	ui.addEventListener("animationend", animationEndListener)
+
+	function animationEndListener(){
+		ui.classList.remove("animate__animated", animation)
+		ui.removeEventListener("animationend", animationEndListener)
+	}
+}
+
+function removeUI(id, animation){
+	const ui = document.getElementById(id)
+
+	if(!animation.split("__").find(e => e == "animate")){
+		ui.classList.add(animation)
+		return
+	}
+
+	ui.classList.add("animate__animated", animation)
+	ui.addEventListener("animationend", animationEndListener)
+
+	function animationEndListener(){
+		ui.classList.remove("animate__animated", animation)
+		ui.classList.add("hidden")
+		ui.removeEventListener("animationend", animationEndListener)
+	}
+}
+
 function scrollTrigger({selector, offeset = 0, execute, viewTrigger}){
 	const position = document.querySelector(selector).getBoundingClientRect()
 	const triggerTop = position.top - offeset
