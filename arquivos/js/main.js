@@ -1,6 +1,6 @@
 
-const KEY = "efb519ffa3e047cebdba546fdcfd63d2"
-const url = `https://api.rawg.io/api/games?key=${KEY}`
+const KEY = "key=efb519ffa3e047cebdba546fdcfd63d2"
+const url = `https://api.rawg.io/api`
 
 const body = document.querySelector("body")
 
@@ -49,7 +49,7 @@ close_modal.addEventListener("click", () => {
 const games_array = []
 
 function fetchGames(){
-	fetch(`${url}&page_size=6`).then(response => response.json())
+	fetch(`${url}/games?${KEY}&page_size=6`).then(response => response.json())
 		.then(data => {
 			setGames(data.results)
 		})
@@ -63,7 +63,19 @@ function setGames(games){
 		const banner = element[index].children[1]
 		element[index].dataset.gameId = game.id
 		banner.innerHTML = `<img src="${game.background_image}" alt="${game.name}">`
+
+		element[index].addEventListener("click", findGame)
 	})
+}
+
+function findGame(e){
+	const gameId = e.target.offsetParent.dataset.gameId
+	fetch(`${url}/games/${gameId}?${KEY}`).then(response => response.json())
+		.then(data => setModal(data))
+}
+
+function setModal(game){
+	modal_container.classList.remove("hidden")
 }
 
 // const getRDR2 = () => {
