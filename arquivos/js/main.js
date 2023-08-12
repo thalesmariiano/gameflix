@@ -37,8 +37,7 @@ games_carrousel.forEach(carrousel => {
 })
 
 close_modal.addEventListener("click", () => {
-	modal_container.classList.add("hidden")
-	modal_container.classList.remove("flex")
+	removeUI("modal-container", "animate__fadeOut")
 	body.classList.remove("overflow-hidden")
 
 	modal_game_platforms.innerHTML = ""
@@ -75,7 +74,7 @@ function findGame(e){
 }
 
 function setModal(game){
-	modal_container.classList.remove("hidden")
+	showUI("modal-container", "animate__fadeIn")
 }
 
 // const getRDR2 = () => {
