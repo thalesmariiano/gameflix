@@ -63,11 +63,11 @@ function setGames(games){
 		element[index].dataset.gameId = game.id
 		banner.innerHTML = `<img src="${game.background_image}" alt="${game.name}">`
 
-		element[index].addEventListener("click", findGame)
+		element[index].addEventListener("click", showGame)
 	})
 }
 
-function findGame(e){
+function showGame(e){
 	const gameId = e.target.offsetParent.dataset.gameId
 	const game = gamesArray.find(g => g.id == gameId)
 
