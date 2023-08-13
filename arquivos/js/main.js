@@ -86,6 +86,9 @@ function showGame(e){
 function setModal(game){
 	console.log(game)
 	showUI("modal-container", "animate__fadeIn")
+
+	modal_game_background.src = game.background_image_additional
+	modal_game_name.innerHTML = game.name
 }
 
 // const getRDR2 = () => {
