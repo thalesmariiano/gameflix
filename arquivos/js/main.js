@@ -45,7 +45,7 @@ close_modal.addEventListener("click", () => {
 	modal_game_genres.innerHTML = ""
 })
 
-const games_array = []
+const gamesArray = []
 
 function fetchGames(){
 	fetch(`${url}/games?${KEY}&page_size=6`).then(response => response.json())
@@ -69,11 +69,22 @@ function setGames(games){
 
 function findGame(e){
 	const gameId = e.target.offsetParent.dataset.gameId
-	fetch(`${url}/games/${gameId}?${KEY}`).then(response => response.json())
-		.then(data => setModal(data))
+	const game = gamesArray.find(g => g.id == gameId)
+
+	if(game){
+		setModal(game)
+	}else{
+		fetch(`${url}/games/${gameId}?${KEY}`).then(response => response.json())
+			.then(data => {
+				setModal(data)
+				gamesArray.push(data)
+			})
+	}
+	
 }
 
 function setModal(game){
+	console.log(game)
 	showUI("modal-container", "animate__fadeIn")
 }
 
