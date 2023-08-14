@@ -39,10 +39,6 @@ games_carrousel.forEach(carrousel => {
 close_modal.addEventListener("click", () => {
 	removeUI("modal-container", "animate__fadeOut")
 	body.classList.remove("overflow-hidden")
-
-	modal_game_platforms.innerHTML = ""
-	modal_game_background.src = ""
-	modal_game_genres.innerHTML = ""
 })
 
 const gamesArray = []
@@ -89,6 +85,8 @@ function setModal(game){
 
 	modal_game_background.src = game.background_image_additional
 	modal_game_name.innerHTML = game.name
+
+	modal_game_description.innerHTML = `${game.description.substr(0, 600)}...`
 }
 
 // const getRDR2 = () => {
