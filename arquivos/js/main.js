@@ -9,7 +9,7 @@ const modal                    = document.querySelector("#modal")
 const close_modal              = document.querySelector("#close-modal")
 const modal_game_platforms     = document.querySelector("#game-platforms")
 const modal_game_name          = document.querySelector("#game-name")
-const modal_game_background    = document.querySelector("#modal-game-background")
+const modal_background         = document.querySelector("#modal-background")
 const modal_game_public_rating = document.querySelector("#game-public-rating")
 const modal_game_release_date  = document.querySelector("#game-release-date")
 const modal_game_rating        = document.querySelector("#game-rating")
@@ -83,7 +83,7 @@ function setModal(game){
 	console.log(game)
 	showUI("modal-container", "animate__fadeIn")
 
-	modal_game_background.src = game.background_image_additional
+	modal_background.style.backgroundImage = `url(${game.background_image_additional})`
 	modal_game_name.innerHTML = game.name
 
 	modal_game_description.innerHTML = `${game.description.substr(0, 600)}...`
