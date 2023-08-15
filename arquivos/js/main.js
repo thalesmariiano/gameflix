@@ -86,6 +86,8 @@ function setModal(game){
 	modal_background.style.backgroundImage = `url(${game.background_image_additional})`
 	modal_game_name.innerHTML = game.name
 
+	modal_game_release_date.innerHTML = new Date(game.released).getFullYear()
+
 	modal_game_description.innerHTML = `${game.description.substr(0, 600)}...`
 
 	modal_game_genres.innerHTML = game.genres.map(genre => genre.name).join(", ")
