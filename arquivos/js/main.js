@@ -88,6 +88,8 @@ function setModal(game){
 
 	modal_game_release_date.innerHTML = new Date(game.released).getFullYear()
 
+	modal_game_rating.innerHTML = game.esrb_rating.name
+
 	modal_game_description.innerHTML = `${game.description.substr(0, 600)}...`
 
 	modal_game_genres.innerHTML = game.genres.map(genre => genre.name).join(", ")
