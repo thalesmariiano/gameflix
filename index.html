@@ -19,7 +19,7 @@
 		<div class="w-full px-5 flex justify-between items-center">
 			<div id="navbar" class="flex items-center gap-x-6">
 				<h1 id="title" class="font-sans font-bold text-4xl text-red-500">GameFlix</h1>
-				<nav>
+				<nav class="hidden md:block">
 					<ul class="flex text-white">
 						<li class="mx-4"><a href="index.html" class="text-gray-300 font-semibold hover:text-white">Inicio</a></li>
 						<li class="mx-4"><a href="#" class="text-gray-300 font-semibold hover:text-white">Jogos</a></li>
@@ -30,7 +30,7 @@
 				</nav>
 			</div>
 
-			<nav>
+			<nav class="hidden md:block">
 				<ul class="flex text-white items-center">
 					<li class="mx-3">
 						<form action="" method="GET" onclick="event.preventDefault()">
@@ -67,6 +67,14 @@
 						</div>
 					</li>
 				</ul>
+			</nav>
+
+			<nav class="block md:hidden">
+				<button class="space-y-1">
+					<div class="w-6 h-1 bg-white"></div>
+					<div class="w-6 h-1 bg-white"></div>
+					<div class="w-6 h-1 bg-white"></div>
+				</button>
 			</nav>
 		</div>
 	</header>
