@@ -86,6 +86,8 @@ function setModal(game){
 	modal_background.style.backgroundImage = `url(${game.background_image_additional})`
 	modal_game_name.innerHTML = game.name
 
+	modal_game_public_rating.innerHTML = game.ratings.find(r => r.id == game.rating_top).title
+
 	modal_game_release_date.innerHTML = new Date(game.released).getFullYear()
 
 	modal_game_rating.innerHTML = game.esrb_rating.name
