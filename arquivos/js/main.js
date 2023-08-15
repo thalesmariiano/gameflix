@@ -87,6 +87,8 @@ function setModal(game){
 	modal_game_name.innerHTML = game.name
 
 	modal_game_description.innerHTML = `${game.description.substr(0, 600)}...`
+
+	modal_game_genres.innerHTML = game.genres.map(genre => genre.name).join(", ")
 }
 
 // const getRDR2 = () => {
