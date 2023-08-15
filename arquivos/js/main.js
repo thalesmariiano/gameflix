@@ -97,6 +97,12 @@ function setModal(game){
 	modal_game_genres.innerHTML = game.genres.map(genre => genre.name).join(", ")
 }
 
+
+
+////////////////* CÓDIGO ANTIGO *////////////////
+
+
+
 // const getRDR2 = () => {
 // 	const redead = fetch(`${url}&search=red-dead-redemption-2`).then(response => response.json())
 // 	.then(data => console.log(data))
